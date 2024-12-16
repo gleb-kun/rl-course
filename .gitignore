@@ -1,0 +1,10 @@
+# Files
+*/tex/*.toc
+*/tex/*.nav
+*/tex/*.out
+*/tex/*.aux
+*/tex/*.vrb
+*/tex/*.snm
+*/tex/*.log
+*/tex/*.synctex.gz
+*/tex/*.pdf
