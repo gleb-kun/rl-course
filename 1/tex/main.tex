@@ -1,0 +1,176 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+
+\usepackage{spbu}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\title{Глубокое обучение с подкреплением}
+\subtitle{Тема 1. Введение в обучение с подкреплением}
+\author{Алцыбеев Глеб Олегович}
+\date{6 февраля, 2025 г.}
+
+\setbeamertemplate{caption}[numbered]
+
+\begin{document}
+
+\maketitle
+
+\section{Обучение с подкреплением}
+
+\begin{frame}{Обучение с подкреплением}
+	
+	Обучение с подкреплением (reinforcement learning, RL).
+	
+\end{frame}
+
+\begin{frame}{Обучение с подкреплением}
+	
+	Обучение с подкреплением (reinforcement learning, RL).
+	
+	\begin{center}
+		\begin{figure}
+			\begin{tikzpicture}
+				\draw[] (0,0) rectangle (2,1);
+				\node at (1,0.5) {\footnotesize Среда};
+				\draw[] (0,2) rectangle (2,3);
+				\node at (1,2.5) {\footnotesize Агент};
+				
+				\draw (2,0.5) -- (2.5,0.5);
+				\draw (2.5,0.5) -- (2.5,2.5);
+				\draw[->]  (2.5,2.5) -- (2, 2.5);
+				\node at (3.5,1.5) {\footnotesize Действие $a_t$};
+				
+				\draw (0,0.75) -- (-0.5, 0.75);
+				\draw (-0.5, 0.75) -- (-0.5, 2.25);
+				\draw[->] (-0.5, 2.25) -- (0, 2.25);
+				
+				\draw (0,0.25) -- (-1, 0.25);
+				\draw (-1, 0.25) -- (-1, 2.75);
+				\draw[->] (-1, 2.75) -- (0, 2.75);
+				
+				\draw[dashed] (-1.5,1.5) -- (0,1.5);
+				\node at (-0.1, 1.25) {\footnotesize $r_{t+1}$};
+				\node at (-1.4, 1.25) {\footnotesize $s_{t+1}$};
+				\node at (-2, 1.75) {\footnotesize Состояние $s_{t}$};
+				\node at (0.9, 1.75) {\footnotesize Вознаграждение $r_{t}$};	
+			\end{tikzpicture}
+			\caption{Цикл управления агентом в обучении с подкреплением}
+			\label{fig:example}
+		\end{figure}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Представление задачи RL}
+	d
+\end{frame}
+
+\begin{frame}{Обучение с подкреплением}
+	
+	Введем следующие обозначения.
+	Состояние:
+	\begin{equation}
+		s_t\in S,
+	\end{equation}
+	где $S$ --- пространство состояний.
+	Действие:
+	\begin{equation}
+		a_t\in A,
+	\end{equation}
+	где $A$ --- пространство действий.
+	Вознаграждение:
+	\begin{equation}
+		r_t=R\left(s_t,a_t,s_{t+1}\right),
+	\end{equation}
+	где $R$ --- функция вознаграждения.
+	
+	Пространства $S, A$ и функция $R$ составляют кортежи $\left(s, a, r\right)$.
+	
+\end{frame}
+
+
+
+
+\section{Обучение с подкреплением как МППР}
+
+\begin{frame}{Обучение с подкреплением как МППР}
+	
+\end{frame}
+
+\section{Обучение функции в обучении с подкреплением}
+
+\begin{frame}{Обучение функции в обучении с подкреплением}
+	
+\end{frame}
+
+\section{Алгоритмы глубокого обучения с подкреплением}
+
+\begin{frame}{Алгоритмы глубокого обучения с подкреплением}
+	
+\end{frame}
+
+\begin{frame}{Алгоритмы, основанные на стратегии}
+	
+\end{frame}
+
+\begin{frame}{Алгоритмы, основанные на полезности}
+	
+\end{frame}
+
+\begin{frame}{Алгоритмы, основанные на модели среды}
+	
+\end{frame}
+
+\begin{frame}{Комбинированные методы}
+	
+\end{frame}
+
+\begin{frame}{Алгоритмы, которые мы рассмотрим в курсе}
+	
+\end{frame}
+
+\begin{frame}{Алгоритмы по актуальному и отложенному опыту}
+	
+\end{frame}
+
+\begin{frame}{Краткий обзор методов}
+	
+\end{frame}
+
+\section{Глубокое обучение для обучения с подкреплением}
+
+\begin{frame}{Глубокое обучение для обучения с подкреплением}
+	
+\end{frame}
+
+\section{Обучение с подкреплением и обучение с учителем}
+
+\begin{frame}{Обучение с подкреплением и обучение с учителем}
+	
+\end{frame}
+
+\begin{frame}{Отсутствие оракула}
+	
+\end{frame}
+
+\begin{frame}{Разреженность обратной связи}
+	
+\end{frame}
+
+\begin{frame}{Генерация данных}
+	
+\end{frame}
+
+\section{Заключение}
+
+\begin{frame}{Заключение}
+	
+\end{frame}
+
+
+
+
+\backmatter
+
+\end{document}

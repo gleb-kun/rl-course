@@ -1,0 +1,214 @@
+\ProvidesPackage{spbu}[2024/08/05 Beamer Theme for Saint Petersburg State University]
+
+% ================================================================================
+% Packages
+% ================================================================================
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{verbatim}
+\RequirePackage{hyperref}
+\RequirePackage{listings}
+\RequirePackage{colortbl}
+
+% ================================================================================
+% Color Accents
+% ================================================================================
+
+\definecolor{polyured}{HTML}{9F2D20}
+\definecolor{polyugrey}{HTML}{76767C}
+\definecolor{skyblue}{HTML}{CA0610}
+\definecolor{lightred}{HTML}{CF968F}
+
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
+\setbeamercolor{head}{bg=polyured}
+
+\setbeamercolor{alerted text}{fg=polyured}
+\setbeamercolor{normal text}{fg=darkgray,bg=white}
+\setbeamercolor{structure}{fg=polyured}
+
+\setbeamercolor{jumbo}{bg=polyured}
+\setbeamercolor{progress bar}{fg=polyured,bg=polyugrey}
+\setbeamercolor{progress bar progress}{use=progress bar,bg=progress bar.fg}
+
+\hypersetup{
+	colorlinks,
+	linkcolor=polyured,
+	anchorcolor=red,
+	citecolor=blue!80,
+	urlcolor=skyblue,
+}
+
+% ================================================================================
+% Fonts
+% ================================================================================
+
+\setbeamerfont{author}{size=\small}
+\setbeamerfont{date}{size=\footnotesize}
+\setbeamerfont{title}{series=\bfseries, size=\Large}
+\setbeamerfont{subtitle}{series=\mdseries,size=\normalsize}
+
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{framesubtitle}{series=\mdseries}
+\setbeamerfont{footline}{size=\scriptsize}
+\setbeamerfont{block title}{series=\centering, size=\small}
+\setbeamerfont{block body}{size=\scriptsize}
+
+\usefonttheme{serif}
+
+% ================================================================================
+% Basic Settings
+% ================================================================================
+
+% cancel navigation symbols
+\setbeamertemplate{navigation symbols}{}
+
+% prettier boxes
+\setbeamertemplate{blocks}[rounded]
+
+% bullet points
+\setbeamertemplate{itemize item}{\textbullet}
+\setbeamertemplate{itemize subitem}{\textemdash}
+\setbeamertemplate{itemize subsubitem}{\ensuremath{\circ}}
+
+% paragraph spacing
+\setlength{\parskip}{10pt}
+
+% code environment
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{skyblue},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{polyugrey},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    xleftmargin=10pt,
+    xrightmargin=10pt,
+}
+\lstset{style=mystyle}
+
+% ================================================================================
+% Slide Templates
+% ================================================================================
+
+% headline for all frames
+\setbeamertemplate{headline}{
+	\ifnum\theframenumber=1
+		% not display the headline for the title page
+	\else
+		\begin{beamercolorbox}[wd=\paperwidth,ht=40pt]{head}
+			\hspace{410pt}\vspace{4.7pt}\includegraphics[width=25pt]{source/logo-white.pdf}
+		\end{beamercolorbox}
+	\fi
+}
+
+% frame title and subtitle
+\setbeamertemplate{frametitle}{
+    \begin{picture}(0,0)
+        \ifx\insertframesubtitle\@empty
+            \put(0,25){\usebeamerfont{frametitle}\usebeamercolor[fg]{title}\insertframetitle}
+		\else
+			\put(0,32){\usebeamerfont{frametitle}\usebeamercolor[fg]{title} \insertframetitle}
+			\put(2,19){\usebeamerfont{framesubtitle}\usebeamercolor[fg]{title} \insertframesubtitle }
+		\fi
+    \end{picture}
+}
+
+% title page
+\setbeamertemplate{title page}{
+	\begin{picture}(0,0)
+		\put(-18,64){
+			\includegraphics[width=130pt]{source/logo-name}
+		}
+        \put(-5,-99){
+            \begin{beamercolorbox}[wd=1.1\paperwidth,ht=155pt]{jumbo}
+            \end{beamercolorbox}
+        }
+       	\put(250,-145){
+    		\includegraphics[width=160pt]{source/logo-lightred.pdf}
+   		}
+		\put(0,25){
+			\begin{minipage}{300pt}
+				\vspace{10pt}
+				\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par
+				\vspace{10pt}
+				\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle
+			\end{minipage}
+		}
+		\put(0,-67){
+			\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor
+		}
+		\put(0,-83){
+			\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate
+		}
+		\put(-50,-152){
+			\colorbox{white}{
+				\makebox(555,50){}
+			}
+		}
+	\end{picture}
+}
+
+\defbeamertemplate{footline}{progress bar}{
+	\dimen0=\paperwidth
+	\multiply\dimen0 by \insertframenumber
+	\divide\dimen0 by \inserttotalframenumber
+	\edef\progressbarwidth{\the\dimen0}
+	\leavevmode
+	\ifnum\theframenumber=1
+	\else
+		\begin{beamercolorbox}[wd=\paperwidth,ht=2pt,dp=1pt]{progress bar}
+			\begin{beamercolorbox}[wd=\progressbarwidth,ht=2pt,dp=1pt]{progress bar progress}
+			\end{beamercolorbox}
+		\end{beamercolorbox}
+	\fi
+}
+
+\setbeamertemplate{footline}[progress bar]
+
+% last frame
+\newcommand{\backmatter}{
+	\begin{picture}(0,0)
+		\put(-5,-230){
+			\begin{beamercolorbox}[wd=1.1\paperwidth,ht=300pt]{jumbo}
+			\end{beamercolorbox}
+		}
+		\put(200,-280){\includegraphics[width=250pt]{source/logo-lightred.pdf}}
+	\end{picture}
+	\put(5,-50){
+		\LARGE \textcolor{lightred}{\textbf{Спасибо за внимание!}}
+	}
+}
+
+% style of sections and subsections in ToCs
+\setbeamertemplate{section in toc}{
+	$\blacktriangleright$~\inserttocsection
+}
+\setbeamertemplate{subsection in toc}{}
+\setbeamertemplate{frametitle continuation}{}
+
+% begin of sections
+\AtBeginSection[]
+{
+    \begingroup
+    \begin{frame}{Содержание}{}
+    	\begin{picture}(0,0)
+    		\put(150,-300){\includegraphics[width=\paperheight]{source/logo-background}}
+    	\end{picture}
+        \tableofcontents[currentsection]
+    \end{frame}
+    \endgroup
+}
