@@ -1,0 +1,3 @@
+[submodule "common/SLM-Lab"]
+	path = common/SLM-Lab
+	url = ../../kengz/SLM-Lab.git
