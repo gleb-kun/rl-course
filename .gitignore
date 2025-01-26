@@ -1,10 +1,13 @@
 # Files
-*/tex/*.toc
-*/tex/*.nav
-*/tex/*.out
-*/tex/*.aux
-*/tex/*.vrb
-*/tex/*.snm
-*/tex/*.log
-*/tex/*.synctex.gz
-*/tex/*.pdf
+**.toc
+**.nav
+**.out
+**.aux
+**.vrb
+**.snm
+**.log
+**.synctex.gz
+**.pdf
+
+# Directories
+**.ipynb_checkpoints
