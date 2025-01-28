@@ -1,0 +1,32 @@
+\documentclass[tikz]{standalone}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\begin{document}
+	\begin{tikzpicture}
+		\draw[] (0,0) rectangle (2,1);
+		\node at (1,0.5) {\footnotesize Среда};
+		\draw[] (0,2) rectangle (2,3);
+		\node at (1,2.5) {\footnotesize Агент};
+	
+		\draw (2,0.5) -- (2.5,0.5);
+		\draw (2.5,0.5) -- (2.5,2.5);
+		\draw[->]  (2.5,2.5) -- (2, 2.5);
+		\node at (3.5,1.5) {\footnotesize Действие $a_t$};
+	
+		\draw (0,0.75) -- (-0.5, 0.75);
+		\draw (-0.5, 0.75) -- (-0.5, 2.25);
+		\draw[->] (-0.5, 2.25) -- (0, 2.25);
+	
+		\draw (0,0.25) -- (-1, 0.25);
+		\draw (-1, 0.25) -- (-1, 2.75);
+		\draw[->] (-1, 2.75) -- (0, 2.75);
+	
+		\draw[dashed] (-1.5,1.5) -- (0,1.5);
+		\node at (-0.1, 1.25) {\footnotesize $r_{t+1}$};
+		\node at (-1.4, 1.25) {\footnotesize $s_{t+1}$};
+		\node at (-2, 1.75) {\footnotesize Состояние $s_{t}$};
+		\node at (0.9, 1.75) {\footnotesize Вознаграждение $r_{t}$};	
+	\end{tikzpicture}
+\end{document}
