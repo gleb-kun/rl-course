@@ -1,0 +1,57 @@
+\documentclass[tikz]{standalone}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\begin{document}
+	\begin{tikzpicture}
+		  \draw[rounded corners=10pt, thick] (0,-2) rectangle (5,3);
+		  \node at ( 2.4,   2.5) {\footnotesize\textbf{      Основанные на полезности}};
+		  \node at ( 1.05,  1.5) {\footnotesize{\textbullet\ SARSA}};
+ 		  \node at ( 2.23,  1)   {\footnotesize{\textbullet\ DQN --- глубокие $Q$-сети}};
+   		  \node at ( 2.57,  0.5) {\footnotesize{\textbullet\ DQN + приоритизированный}};
+ 		  \node at ( 2.92,  0)   {\footnotesize{буфер примеров}};
+   		  \node at ( 1.15, -0.5)   {\footnotesize{\textbullet\ QT-OPT}};
+		  
+ 		  \draw[rounded corners=10pt, thick] (6,-2) rectangle (11,3);
+		  \node at ( 8.4,   2.5) {\footnotesize\textbf{      Основанные на стратегии}};
+ 		  \node at ( 7.47,  1.5) {\footnotesize{\textbullet\ REINFORCE}};
+		  
+  		  \draw[rounded corners=10pt, thick] (12,-2) rectangle (17,3);
+		  \node at (14.4,   2.5) {\footnotesize\textbf{      Основанные}};
+ 		  \node at (14.4,   2)   {\footnotesize\textbf{      на модели среды}};
+   		  \node at (14.1,   1.5) {\footnotesize{\textbullet\ iLQR --- итерационный}};
+ 		  \node at (14.25,  1)   {\footnotesize{                      линейно-квадратичный}};
+   		  \node at (13.35,  0.5) {\footnotesize{                      регулятор}};
+ 		  \node at (14.55,  0)   {\footnotesize{\textbullet\ MPC ---  управление на основе}};
+   		  \node at (14.43, -0.5) {\footnotesize{                      прогнозирующих моделей}};
+   		  \node at (14.55, -1)   {\footnotesize{\textbullet\ MCTS --- метод Монте-Карло}};
+ 		  \node at (14.05, -1.5) {\footnotesize{                      для поиска в дереве}};
+ 		  
+ 		  \draw[rounded corners=10pt, thick] (9,-7.5) rectangle (16.5,-3);
+  		  \node at ( 4.2, -3.5) {\footnotesize\textbf{       Комбинированные методы,}};
+  		  \node at ( 4.2, -4)   {\footnotesize\textbf{       основанные на полезности и стратегии}};
+ 		  \node at ( 4.2,  -4.5) {\footnotesize{\textbullet\ Методы актора-критика: A2C, GAE, A3C, SAC}};
+   		  \node at ( 3.23, -5)   {\footnotesize{\textbullet\ TRPO --- оптимизация стратегии}};
+ 		  \node at ( 4.19, -5.5) {\footnotesize{                      по доверительной области}};
+ 		  \node at ( 4.2,  -6)   {\footnotesize{\textbullet\ PPO --- проксимальная оптимизация стратегии}};
+ 		  
+   		  \draw[rounded corners=10pt, thick] (0.5,-7.5) rectangle (8,-3);
+   		  \node at (12.6,  -3.5) {\footnotesize\textbf{      Комбинированные методы,}};
+   		  \node at (12.6,  -4)   {\footnotesize\textbf{      основанные на модели среды }};
+ 		  \node at (12.6,  -4.5) {\footnotesize\textbf{      и полезности и/или стратегии}};
+   		  \node at (10.75, -5)   {\footnotesize{\textbullet\ Dyna-Q/Dyna-AC}};
+ 		  \node at (10.23, -5.5) {\footnotesize{\textbullet\ AlphaZero}};
+   		  \node at (12.49, -6)   {\footnotesize{\textbullet\ I2A --- агенты, дополненные воображением}};
+ 		  \node at (12.39, -6.5) {\footnotesize{\textbullet\ VPN --- нейронные сети прогнозирования}};
+   		  \node at (11.54, -7)   {\footnotesize{полезности}};
+   		  
+   		  \draw                ( 2.5,  -2.5) -- (14.5,  -2.5);
+   		  \draw                ( 2.5,  -2)   -- ( 2.5,  -2.5);
+   		  \draw                ( 8.5,  -2)   -- ( 8.5,  -2.5);
+ 		  \draw                (14.5,  -2)   -- (14.5,  -2.5);
+  	 	  \draw                (14.5,  -2)   -- (14.5,  -2.5);
+  	  	  \draw[->, >=stealth] (12.75, -2.5) -- (12.75, -3);
+ 	  	  \draw[->, >=stealth] ( 4.25, -2.5) -- ( 4.25, -3);
+	\end{tikzpicture}
+\end{document}
