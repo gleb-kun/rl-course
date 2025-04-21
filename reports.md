@@ -4,6 +4,8 @@
 2. Метод актора критика с преимуществом (A2C)
 3. Open AI gym toolkit
     - https://github.com/openai/gym
+4. Extendet SARSA
+5. Более продвинутые DQN
 
 # Темы по глубокому обучению
 
