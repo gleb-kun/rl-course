@@ -1,0 +1,35 @@
+\documentclass[tikz]{standalone}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\begin{document}
+	\begin{tikzpicture}
+		\draw[->] (0,0) -- (7,0) node[midway, below=5pt] {Состояние} node[below] {$S$};
+		\draw[->] (0,0) -- (0,7) node[midway, rotate=90, above=5pt] {Вознаграждение} node[left] {$r$};
+		
+		\draw (5,1.5) -- (5,5);
+		\draw (5,1.5) -- (7,1.5);
+		\draw (0,5) -- (5,5);
+		
+		\fill[gray] (1,5) circle [radius=0.1];
+		\draw[black, thin] (1,5) circle [radius=0.1];
+		
+		\fill[gray] (4.8,5) circle [radius=0.1];
+		\draw[black, thin] (4.8,5) circle [radius=0.1];
+		
+		\fill[gray] (5,1.5) circle [radius=0.1];
+		\draw[black, thin] (5,1.5) circle [radius=0.1];
+		
+		\node[below left] at (0,0) {0};
+		\node[above left] at (0,5) {$10$};
+		\node[below] at (5,0) {$1$};
+		
+		\draw[->] (3.6,6) -- (4.6,5.2);
+		\draw[->] (2.2,6) -- (1.2,5.2);
+		\node at (3,6.5) {$0<s<1$};
+		
+		\draw[->] (6,3) -- (5.2,1.8);
+		\node[above right] at (6,3) {$s=1$};
+	\end{tikzpicture}
+\end{document}
